@@ -10,6 +10,7 @@ class_names = ['Encroachment by parking','Encroachment by planters','Encroachmen
 
 model = tf.keras.models.load_model('pavement.h5', compile=False)
 
+app = Flask(__name__)
 @app.route('/predict', methods=['POST'])
 def predict():
     image = request.files['image']
