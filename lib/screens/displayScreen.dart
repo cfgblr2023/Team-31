@@ -6,7 +6,8 @@ import 'package:dappunk_creator/screens/api.dart';
 class DisplayPictureScreen extends StatelessWidget {
   final String imagePath;
 
-  const DisplayPictureScreen({super.key, required this.imagePath});
+  const DisplayPictureScreen({Key? key, required this.imagePath})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -20,7 +21,8 @@ class DisplayPictureScreen extends StatelessWidget {
           Navigator.push(
             context,
             MaterialPageRoute(
-                builder: (context) => ApiPage()), // Navigate to the ApiPage
+              builder: (context) => ApiPage(imagePath: imagePath),
+            ),
           );
         },
         child: Icon(Icons.upload),
